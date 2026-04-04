@@ -1,0 +1,17 @@
+{
+  "data": "shandong_gan_ready_final.csv",
+  "epochs": 800,
+  "batch_size": 16,
+  "noise_dim": 128,
+  "num_classes": 3,
+  "lr": 0.0001,
+  "betas": [
+    0.5,
+    0.9
+  ],
+  "n_critic": 5,
+  "gp_lambda": 10.0,
+  "seed": 42,
+  "save_dir": "outputs",
+  "scaler_path": "shandong_scaler.pkl"
+}
