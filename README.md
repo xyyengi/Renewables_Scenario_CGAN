@@ -58,6 +58,36 @@ python train.py \
 	--lr 1e-4 \
 	--save-dir outputs
 
+### 3.1 在终端实时查看训练日志（推荐）
+
+如果你希望在当前终端持续看到训练进度，不要把训练放到后台，直接前台运行：
+
+python train.py \
+	--data germany_data_final.csv \
+	--epochs 800 \
+	--batch-size 16 \
+	--noise-dim 128 \
+	--n-critic 5 \
+	--gp-lambda 10.0 \
+	--lr 1e-4 \
+	--save-dir result \
+	--scaler-path germany_scaler.pkl
+
+如果你想一边看日志，一边把日志保存到文件：
+
+mkdir -p logs
+python train.py \
+	--data germany_data_final.csv \
+	--save-dir result \
+	--scaler-path germany_scaler.pkl \
+	2>&1 | tee logs/train_germany.log
+
+如果你已经在后台训练了，可以这样查看最新输出：
+
+tail -f logs/train_germany.log
+
+说明：当前 train.py 每 20 个 epoch 打印一次日志（以及第 1 个 epoch）。
+
 训练输出：
 
 - 模型权重：outputs/<时间戳>/cgan_wgangp_504.pth
