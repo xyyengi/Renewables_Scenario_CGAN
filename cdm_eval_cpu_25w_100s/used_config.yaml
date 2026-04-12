@@ -1,0 +1,33 @@
+data:
+  csv_path: germany_data_final.csv
+  scaler_path: germany_scaler.pkl
+  feature_dim: 504
+  train_size: 115
+  valid_size: 25
+  test_size: 25
+  eval_weeks: 25
+model:
+  base_channels: 64
+  time_embed_dim: 128
+  cond_embed_dim: 128
+  dropout: 0.1
+  label_dropout: 0.1
+diffusion:
+  num_steps: 50
+  beta_start: 0.0001
+  beta_end: 0.02
+  schedule: linear
+  guidance_scale: 0.0
+train:
+  epochs: 300
+  batch_size: 16
+  lr: 0.001
+  weight_decay: 1.0e-06
+  patience: 30
+  min_delta: 1.0e-06
+  num_workers: 0
+eval:
+  num_scenarios: 100
+  eval_weeks: 25
+  coverage_alpha: 0.1
+  max_lag: 167
