@@ -21,7 +21,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--label", type=int, required=True, choices=[0, 1, 2], help="output_label condition")
     parser.add_argument("--num-samples", type=int, default=10, help="Number of scenarios to generate")
     parser.add_argument("--noise-dim", type=int, default=None, help="Override noise dimension")
-    parser.add_argument("--scaler-path", type=str, default="shandong_scaler.pkl", help="Path to fitted scaler")
+    parser.add_argument("--scaler-path", type=str, default="germany_scaler.pkl", help="Path to fitted scaler")
     parser.add_argument("--output", type=str, default="generated_samples.csv", help="Output CSV path")
     parser.add_argument("--seed", type=int, default=42)
     return parser.parse_args()

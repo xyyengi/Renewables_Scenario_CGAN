@@ -104,18 +104,18 @@ def plot_losses(history: Dict[str, List[float]], out_path: str) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train multivariate conditional WGAN-GP")
-    parser.add_argument("--data", type=str, default="shandong_gan_ready_final.csv")
-    parser.add_argument("--epochs", type=int, default=800)
-    parser.add_argument("--batch-size", type=int, default=16)
+    parser.add_argument("--data", type=str, default="germany_data_final.csv")
+    parser.add_argument("--epochs", type=int, default=1000)
+    parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--noise-dim", type=int, default=128)
     parser.add_argument("--num-classes", type=int, default=3)
     parser.add_argument("--lr", type=float, default=1e-4)
-    parser.add_argument("--betas", type=float, nargs=2, default=(0.5, 0.9))
+    parser.add_argument("--betas", type=float, nargs=2, default=(0.0, 0.9))
     parser.add_argument("--n-critic", type=int, default=5)
     parser.add_argument("--gp-lambda", type=float, default=10.0)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--save-dir", type=str, default="outputs")
-    parser.add_argument("--scaler-path", type=str, default="shandong_scaler.pkl")
+    parser.add_argument("--scaler-path", type=str, default="germany_scaler.pkl")
     return parser.parse_args()
 
 
