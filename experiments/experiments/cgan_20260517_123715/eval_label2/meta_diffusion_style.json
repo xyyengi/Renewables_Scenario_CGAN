@@ -1,0 +1,15 @@
+{
+  "real_data": "germany_data_final.csv",
+  "generated_data": "experiments/cgan_20260517_123715/generated_label2.csv",
+  "label": 2,
+  "n_real": 56,
+  "generated_pool": 1000,
+  "n_samples": 10,
+  "sampling_mode": "with_replacement",
+  "seed": 42,
+  "channel_order": [
+    "wind",
+    "solar",
+    "load"
+  ]
+}
